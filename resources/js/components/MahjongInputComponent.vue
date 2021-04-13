@@ -1,9 +1,13 @@
 <template>
     <form action="/create" method="POST">
         <input type="hidden" name="_token" v-bind:value="csrf">
+
+        <!-- 牌記号入力テキストフォーム -->
         <div class="row justify-content-center">
             <input id="input-pais" type="text" name="input-pais" :value="pai_text" @input="onPaiInput"　class="form-control pai-input rounded-pill" maxlength="34" placeholder="14牌になるように牌記号を入力しましょう">
         </div>
+
+        <!-- 牌姿のプレビュー表示 -->
         <div class="row justify-content-center">
             <div class="pai-preview-container">
                 <div v-for="pai in pais" :key="pai.no" class="pai-item">
@@ -19,11 +23,15 @@
                 </div>
             </div>
         </div>
+
+        <!-- アラートメッセージ -->
         <div class="row justify-content-center">
             <div class="alert" v-bind:class="[hasError ? alertWarning : alertSuccess]" role="alert">
                 {{this.message}}
             </div>
         </div>
+
+        <!-- 生成ボタン -->
         <div class="row justify-content-center">
             <button type="submit" :disabled="!isActive" class=" btn btn-primary rounded-pill ml-3 mb-5 ">この局面を生成する</button>
         </div>

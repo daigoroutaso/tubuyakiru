@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- 投票コンポーネント -->
         <vue-poll v-bind="options" @addvote="addVote"/>
     </div>
 </template>
@@ -15,12 +16,18 @@
             let contents = [];
             let answers = [];
  
+            //牌姿文字列を配列に格納
             for (let i = 0; i < this.content.pais.length ; i += 2) contents.push(this.content.pais.substring(i,i + 2))
+
+            //ツモがあれば追加で格納
             if(this.content.tumo !== ''){
                 contents.push(this.content.tumo)
             }
+
+            //ユニーク化
             contents = Array.from(new Set(contents))
 
+            //字牌を表示用にリプレイス
             contents = contents.map(function(pai){
                 return pai.replace('1z','東').
                            replace('2z','南').
@@ -31,6 +38,7 @@
                            replace('7z','中')
             })
 
+            //回答配列作成
             contents.forEach((pai,index) => {
                 let answer = {value: index, text: pai, votes: this.content['vote_' + index.toString()]};
                 answers.push(answer);

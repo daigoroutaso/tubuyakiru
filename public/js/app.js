@@ -13065,6 +13065,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     csrf: {
@@ -13255,6 +13263,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['content'],
@@ -13262,20 +13271,24 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     var contents = [];
-    var answers = [];
+    var answers = []; //牌姿文字列を配列に格納
 
     for (var i = 0; i < this.content.pais.length; i += 2) {
       contents.push(this.content.pais.substring(i, i + 2));
-    }
+    } //ツモがあれば追加で格納
+
 
     if (this.content.tumo !== '') {
       contents.push(this.content.tumo);
-    }
+    } //ユニーク化
 
-    contents = Array.from(new Set(contents));
+
+    contents = Array.from(new Set(contents)); //字牌を表示用にリプレイス
+
     contents = contents.map(function (pai) {
       return pai.replace('1z', '東').replace('2z', '南').replace('3z', '西').replace('4z', '北').replace('5z', '白').replace('6z', '發').replace('7z', '中');
-    });
+    }); //回答配列作成
+
     contents.forEach(function (pai, index) {
       var answer = {
         value: index,
@@ -13347,9 +13360,6 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.component('font-awesome-icon', _fortawe
   methods: {
     doCopy: function doCopy() {
       this.$copyText(location.href).then(function (e) {
-        toastr.options = {
-          "positionClass": "toast-top-full-width"
-        };
         toastr.info('クリップボードにコピーしました（' + location.href + '）');
         console.log(e);
       }, function (e) {

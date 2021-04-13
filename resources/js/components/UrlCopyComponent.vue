@@ -24,10 +24,6 @@ export default {
         doCopy: function () {
             this.$copyText(location.href).then(function (e) {
 
-                toastr.options = {
-                    "positionClass": "toast-top-full-width"
-                }
-
                 toastr.info('クリップボードにコピーしました（' + location.href + '）');
                 console.log(e)
             }, function (e) {

@@ -15,11 +15,14 @@ use App\Http\Controllers\ContentController;
 use Log;
 use File;
 
+//
+// コンテンツコントローラー 
+//
 class ContentController extends Controller
 {
+
     //
-    //
-    // 結果表示
+    // コンテンツ表示
     //
     public function index($page_id){
 
@@ -31,22 +34,11 @@ class ContentController extends Controller
     }
 
     //
-    // 配牌し結果レコードを作成する
+    // コンテンツ作成
     //
     public function create(Request $request){
 
-        //contentsレコード挿入
-        $newcontent = new Content;
-        if(Auth::check()){
-            $newcontent->user_id = Auth::user()->email;
-        }else{
-            $newcontent->user_id = '';
-        }
-
-        $newcontent->tumo = '';
-        $newcontent->dora = '';
-
-        //判定用replace
+        //判定用にreplace
         $input_pais = $request->input('input-pais');
         $input_pais = str_replace('ツモ','T',$input_pais);
         $input_pais = str_replace('ドラ','D',$input_pais);
@@ -58,10 +50,10 @@ class ContentController extends Controller
         $input_pais = str_replace('發','6z',$input_pais);
         $input_pais = str_replace('中','7z',$input_pais);
 
-        $pais = '';
         $mspz = '';
         $tumo = '';
         $dora = '';
+        $pais = '';
 
         //テキストの反対側から取り出していく
         for($i = strlen($input_pais) - 1; $i >= 0; --$i){
@@ -83,8 +75,15 @@ class ContentController extends Controller
 
                 $dora = substr($pais,0,2);
                 $pais = substr($pais,2);
-
             }
+        }
+
+        //contentsレコード生成
+        $newcontent = new Content;
+        if(Auth::check()){
+            $newcontent->user_id = Auth::user()->email;
+        }else{
+            $newcontent->user_id = '';
         }
         $newcontent->tumo = $tumo;
         $newcontent->dora = $dora;
@@ -133,7 +132,7 @@ class ContentController extends Controller
 
         imagepng($template_image, storage_path().'/app/public/twitter-card/'.$page_id.'.png');
 
-        session()->flash('flash_message', '作成に成功しました！Twitterで画像付きツイート');
+        session()->flash('flash_message', '作成に成功しました！');
 
         return redirect()->action([ContentController::class,'index'], ['page_id' => $page_id]);
 
