@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('twitter-card')
+<meta name="twitter:card" content="summary"></meta>
+<meta property="og:url" content="http://tubuyakiru.com/" />
+<meta property="og:title" content="麻雀つぶや切る" />
+<meta property="og:description" content="５秒で何切る問題を作ってURLを画像付きツイートできる麻雀学習ツールサービスです。" />
+<meta property="og:image" content="http://tubuyakiru.com/public/img/twitter-card-home.png" />
 @endsection
 
 @section('content')
