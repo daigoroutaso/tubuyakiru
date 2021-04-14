@@ -3,27 +3,23 @@
         <input type="hidden" name="_token" v-bind:value="csrf">
 
         <!-- 牌記号入力テキストフォーム -->
-        <div class="row justify-content-center">
-            <div class="col-10">
-                <input id="input-pais" type="text" name="input-pais" :value="pai_text" @input="onPaiInput"　class="form-control pai-input rounded-pill" maxlength="34" placeholder="14牌になるように牌記号を入力しましょう">
-            </div>
+        <div class="row justify-content-center px-4">
+            <input id="input-pais" type="text" name="input-pais" :value="pai_text" @input="onPaiInput"　class="form-control pai-input rounded-pill" maxlength="34" placeholder="14牌になるように牌記号を入力しましょう">
         </div>
 
         <!-- 牌姿のプレビュー表示 -->
-        <div class="row justify-content-center">
-            <div class="col-10">
-                <div class="pai-preview-container">
-                    <div v-for="pai in pais" :key="pai.no" class="pai-item">
-                        <img :src="pai.img_path" alt="">
-                    </div>
-                    <div v-if="tumo" class="pai-item ml-2">
-                        <img :src="tumo" alt="">
-                        <p>ツモ</p>
-                    </div>
-                    <div v-if="dora" class="pai-item ml-2">
-                        <img :src="dora" alt="">
-                        <p>ドラ</p>
-                    </div>
+        <div class="row justify-content-center px-4">
+            <div class="pai-preview-container">
+                <div v-for="pai in pais" :key="pai.no" class="pai-item">
+                    <img :src="pai.img_path" alt="">
+                </div>
+                <div v-if="tumo" class="pai-item ml-2">
+                    <img :src="tumo" alt="">
+                    <p>ツモ</p>
+                </div>
+                <div v-if="dora" class="pai-item ml-2">
+                    <img :src="dora" alt="">
+                    <p>ドラ</p>
                 </div>
             </div>
         </div>

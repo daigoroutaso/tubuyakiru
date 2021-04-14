@@ -20,10 +20,8 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <div class="col-10">
-            <p class="lead sub-title text-light text-center">何切るを作ってSNSで共有しよう！</p>
-        </div>
+    <div class="row justify-content-center px-4">
+        <p class="lead sub-title text-light text-center">５秒で何切るを作ってつぶやこう！</p>
     </div>
 
     <mahjong-input-component  :csrf="{{json_encode(csrf_token())}}"></mahjong-input-component>    
