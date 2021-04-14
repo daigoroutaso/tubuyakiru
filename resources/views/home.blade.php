@@ -15,11 +15,15 @@
 
     {{--トップ絵--}}
     <div class="row justify-content-center">
-        <img src="{{ asset('img/top.png') }}" class="img-thumbnail rounded-circle" width=30% alt="">
+        <div class="col-4">
+            <img src="{{ asset('img/top.png') }}" class="img-thumbnail rounded-circle img-fluid" alt="">
+        </div>
     </div>
 
     <div class="row justify-content-center">
-        <p class="lead sub-title text-light">5秒で何切るを作ってSNSで共有しよう！</p>
+        <div class="col-10">
+            <p class="lead sub-title text-light text-center">何切るを作ってSNSで共有しよう！</p>
+        </div>
     </div>
 
     <mahjong-input-component  :csrf="{{json_encode(csrf_token())}}"></mahjong-input-component>    

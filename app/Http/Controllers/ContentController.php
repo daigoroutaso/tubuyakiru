@@ -75,6 +75,7 @@ class ContentController extends Controller
 
                 $dora = substr($pais,0,2);
                 $pais = substr($pais,2);
+                
             }
         }
 

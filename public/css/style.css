@@ -11,6 +11,7 @@ main{
 body{
     background-color: #ebefd0 !important;
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    -webkit-text-size-adjust: 100%;
 }
 
 footer{
@@ -29,8 +30,9 @@ footer p {
 }
 
 .sub-title{
-    padding: 2% 0;
+    padding: 2% 2%;
     margin: 26px 0;
+
 }
 
 .content-title{
@@ -75,8 +77,8 @@ footer p {
 }
 
 .pai-input {
-    width :410px;
-    font-size: 0.9rem;
+    width :100%;
+    font-size: 0.85rem;
 }
 
 .pai-container {
@@ -96,7 +98,6 @@ footer p {
 .pai-preview-container {
     margin: 30px 0;
     display: flex;
-    padding: 0 12%;
 }
 .pai-preview-container img {
     max-width: 100%;

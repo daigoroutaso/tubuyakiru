@@ -13073,6 +13073,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     csrf: {
@@ -49731,49 +49735,53 @@ var render = function() {
     }),
     _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("input", {
-        staticClass: "form-control pai-input rounded-pill",
-        attrs: {
-          id: "input-pais",
-          type: "text",
-          name: "input-pais",
-          maxlength: "34",
-          placeholder: "14牌になるように牌記号を入力しましょう"
-        },
-        domProps: { value: _vm.pai_text },
-        on: { input: _vm.onPaiInput }
-      })
+      _c("div", { staticClass: "col-10" }, [
+        _c("input", {
+          staticClass: "form-control pai-input rounded-pill",
+          attrs: {
+            id: "input-pais",
+            type: "text",
+            name: "input-pais",
+            maxlength: "34",
+            placeholder: "14牌になるように牌記号を入力しましょう"
+          },
+          domProps: { value: _vm.pai_text },
+          on: { input: _vm.onPaiInput }
+        })
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c(
-        "div",
-        { staticClass: "pai-preview-container" },
-        [
-          _vm._l(_vm.pais, function(pai) {
-            return _c("div", { key: pai.no, staticClass: "pai-item" }, [
-              _c("img", { attrs: { src: pai.img_path, alt: "" } })
-            ])
-          }),
-          _vm._v(" "),
-          _vm.tumo
-            ? _c("div", { staticClass: "pai-item ml-2" }, [
-                _c("img", { attrs: { src: _vm.tumo, alt: "" } }),
-                _vm._v(" "),
-                _c("p", [_vm._v("ツモ")])
+      _c("div", { staticClass: "col-10" }, [
+        _c(
+          "div",
+          { staticClass: "pai-preview-container" },
+          [
+            _vm._l(_vm.pais, function(pai) {
+              return _c("div", { key: pai.no, staticClass: "pai-item" }, [
+                _c("img", { attrs: { src: pai.img_path, alt: "" } })
               ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.dora
-            ? _c("div", { staticClass: "pai-item ml-2" }, [
-                _c("img", { attrs: { src: _vm.dora, alt: "" } }),
-                _vm._v(" "),
-                _c("p", [_vm._v("ドラ")])
-              ])
-            : _vm._e()
-        ],
-        2
-      )
+            }),
+            _vm._v(" "),
+            _vm.tumo
+              ? _c("div", { staticClass: "pai-item ml-2" }, [
+                  _c("img", { attrs: { src: _vm.tumo, alt: "" } }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("ツモ")])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.dora
+              ? _c("div", { staticClass: "pai-item ml-2" }, [
+                  _c("img", { attrs: { src: _vm.dora, alt: "" } }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("ドラ")])
+                ])
+              : _vm._e()
+          ],
+          2
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row justify-content-center" }, [
