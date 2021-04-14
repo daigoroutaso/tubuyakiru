@@ -2,10 +2,10 @@
 
 @section('twitter-card')
 <meta name="twitter:card" content="summary_large_image"></meta>
-<meta property="og:url" content="http://tubuyakiru.com/" />
+<meta property="og:url" content="https://tubuyakiru.com/" />
 <meta property="og:title" content="麻雀つぶや切る" />
 <meta property="og:description" content="５秒で何切る問題を作ってURLを画像付きツイートできる麻雀学習ツールサービスです。" />
-<meta property="og:image" content="http://tubuyakiru.com/storage/twitter-card/{{$contents[0]->id}}.png" />
+<meta property="og:image" content="https://tubuyakiru.com/storage/twitter-card/{{$contents[0]->id}}.png" />
 @endsection
 
 @section('content')
