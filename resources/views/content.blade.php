@@ -13,7 +13,7 @@
 
     <div class="row justify-content-center">
         <div class="sns-area">
-            <a href="https://twitter.com/intent/tweet?text=東○局 △巡目 □家 &url=http://tubuyakiru.com/{{$contents[0]->id}} &hashtags=つぶや切る,麻雀,何切る問題" rel=”nofollow” onClick="window.open(encodeURI(decodeURI(this.href)),'twwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1'); return false;"><i class="fab fa-twitter fa-2x "></i></i></a>
+            <a href="https://twitter.com/intent/tweet?text=東○局 △巡目 □家 &url=https://tubuyakiru.com/{{$contents[0]->id}} &hashtags=つぶや切る,麻雀,何切る問題" rel=”nofollow” onClick="window.open(encodeURI(decodeURI(this.href)),'twwindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1'); return false;"><i class="fab fa-twitter fa-2x "></i></i></a>
             <url-copy-component></url-copy-component>
         </div>
     </div>
