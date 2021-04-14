@@ -2,10 +2,9 @@
 
 @section('twitter-card')
 <meta name="twitter:card" content="summary_large_image"></meta>
-<meta name="twitter:site" content="@daigoroutaso" />
 <meta property="og:url" content="http://tubuyakiru.com/" />
-<meta property="og:title" content="A Twitter for My Sister" />
-<meta property="og:description" content="In the early days, Twitter grew so quickly that it was almost impossible to add new features because engineers spent their time trying to keep the rocket ship from stalling." />
+<meta property="og:title" content="麻雀つぶや切る" />
+<meta property="og:description" content="サクッと何切るを作って画像付きツイートできる麻雀ツールサービスです。" />
 <meta property="og:image" content="http://tubuyakiru.com/storage/twitter-card/{{$contents[0]->id}}.png" />
 @endsection
 
